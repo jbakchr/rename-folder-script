@@ -1,10 +1,10 @@
 import os
 
-def get_folder_names_in_current_dir(cur_dir):
+def get_folder_names_in_current_dir(cur_dir: str) -> list:
   return [dir.name for dir in os.scandir(current_dir) if dir.is_dir() and not dir.name.startswith(".")]
 
 
-def rename_folders(folders):
+def rename_folders(folders: list) -> None:
   for i, name in enumerate(folders, 1):
     
     prefix = name.split("-")[0]
